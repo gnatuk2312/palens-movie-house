@@ -1,0 +1,1 @@
+{"version":3,"sources":["sass/main.scss"],"names":[],"mappings":"AAQA,GACC","file":"src.de791e96.css","sourceRoot":"../src","sourcesContent":["/*\n * Главный файл стилей.\n * Все паршалы подключаются сюда.\n */\n\n// Стили для файла с примером HTML-фрагмента\n//@import './example';\n\nh2 {\n\tcolor: aquamarine;\n}\n"]}
