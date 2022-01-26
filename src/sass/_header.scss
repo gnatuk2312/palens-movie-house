@@ -1,3 +1,109 @@
-header div {
-	color: chartreuse;
+.header {
+	background-color: $lightBlue;
+	padding: 20px 0px 30px 0px;
+	&__container {
+		max-width: 1040px;
+		padding: 0px 20px;
+		margin: 0 auto;
+	}
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 4px;
+	}
+	&__logo {
+		display: flex;
+		align-items: center;
+	}
+
+	&__title {
+		font-family: "Supermercado One";
+		font-size: 1.8rem;
+		margin-left: 12px;
+	}
+
+	&__menu {
+		display: flex;
+		align-items: center;
+	}
+
+	&__categories-menu {
+		margin-right: 20px;
+		display: flex;
+		align-items: center;
+		span {
+			margin: 6px 6px 0px 0px;
+			font-size: 1.1rem;
+			letter-spacing: 0.7px;
+		}
+		.dark-mode {
+			border: solid white;
+			border-radius: 2px;
+			border-width: 0 3px 3px 0;
+			display: inline-block;
+			padding: 4px;
+		}
+		.light-mode {
+			border: solid black;
+			border-width: 0 3px 3px 0;
+			display: inline-block;
+			padding: 3px;
+		}
+		.arrow-down {
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+		}
+		.arrow-up {
+			transform: rotate(-135deg);
+			-webkit-transform: rotate(-135deg);
+		}
+	}
+	&__categories-wrapper {
+		position: absolute;
+		background-color: #5b83a3;
+		width: 100%;
+		z-index: 3;
+		border-radius: 2px;
+		padding: 20px 20px;
+		top: 76px;
+		left: 0;
+		transition: all 0.3s ease;
+	}
+	&__categories {
+		max-width: 1040px;
+		margin: 0 auto;
+		display: grid;
+		justify-items: center;
+		row-gap: 10px;
+		grid-template: auto / repeat(auto-fit, minmax(110px, 1fr));
+	}
+
+	&__category {
+		color: white;
+	}
+
+	&__search {
+		display: flex;
+		align-items: center;
+		position: relative;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	&__input {
+		width: 100%;
+		background-color: rgba(255, 255, 255, 0.3);
+		border-radius: 4px;
+		box-shadow: 2px 6px 20px rgba(255, 255, 255, 0.1);
+		padding: 4px 10px;
+		&::placeholder {
+			color: rgba(255, 255, 255, 0.9);
+		}
+	}
+
+	&__button {
+		position: absolute;
+		right: 10px;
+	}
 }
