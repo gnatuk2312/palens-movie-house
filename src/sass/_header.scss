@@ -77,12 +77,12 @@
 	}
 	&__categories-wrapper {
 		position: absolute;
-		background-color: #5b83a3;
+		background-color: $lightBlue;
 		width: 100%;
 		z-index: 3;
 		border-radius: 2px;
 		padding: 20px 20px;
-		top: 69px;
+		top: 66px;
 		left: 0;
 		transition: all 0.4s ease-out;
 	}
@@ -113,8 +113,8 @@
 		width: 100%;
 		background-color: rgba(255, 255, 255, 0.3);
 		border-radius: 4px;
-		box-shadow: 2px 6px 20px rgba(255, 255, 255, 0.1);
-		padding: 4px 10px;
+		box-shadow: 2px 12px 20px rgba(255, 255, 255, 0.1);
+		padding: 4px 36px 4px 10px;
 		letter-spacing: 1px;
 		font-size: 1.1rem;
 		color: white;
