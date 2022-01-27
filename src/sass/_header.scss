@@ -1,10 +1,9 @@
 .header {
-	background-color: $lightBlue;
+	background-color: $bg2-light;
 	padding: 20px 0px 30px 0px;
-	&__container {
-		max-width: 1050px;
-		padding: 0px 15px;
-		margin: 0 auto;
+	transition: background-color 0.3s ease;
+	&.dark-mode {
+		background-color: $bg2-dark;
 	}
 	&__wrapper {
 		display: flex;
@@ -24,10 +23,14 @@
 		font-family: "Supermercado One";
 		font-size: 1.9rem;
 		margin-left: 12px;
+		color: $lightMode-text;
 		@media (max-width: 480px) {
 			font-size: 1.6rem;
 			margin-left: 6px;
 		}
+	}
+	&__title.dark-mode {
+		color: white;
 	}
 
 	&__menu {
@@ -52,12 +55,10 @@
 			border-radius: 2px;
 			transition: transform 0.3s ease;
 			transform: rotateZ(270deg);
+			border-right: 8px solid $lightMode-text;
 		}
-		.dark-mode {
-			border-right: 8px solid white;
-		}
-		.light-mode {
-			border-right: 8px solid black;
+		.arrow.dark-mode {
+			border-right: 8px solid $darkMode-text;
 		}
 		.active {
 			transform: rotate(90deg);
@@ -67,24 +68,28 @@
 		margin: 6px 6px 0px 0px;
 		font-size: 1.1rem;
 		letter-spacing: 0.7px;
+		color: $lightMode-text;
 		@media (max-width: 480px) {
 			font-size: 0.9rem;
 			margin: 6px 4px 0px 0px;
 		}
+	}
+	&__genre.dark-mode {
+		color: $darkMode-text;
 	}
 	&__color-theme img {
 		transition: all 0.3s ease;
 	}
 	&__categories-wrapper {
 		position: absolute;
-		background-color: $lightBlue;
+		background-color: $bg2-dark;
 		width: 100%;
 		z-index: 3;
 		border-radius: 2px;
 		padding: 20px 20px;
 		top: 66px;
 		left: 0;
-		transition: all 0.4s ease-out;
+		transition: opacity 0.4s ease-out;
 	}
 	&__categories {
 		max-width: 1050px;
@@ -93,12 +98,13 @@
 		justify-items: center;
 		row-gap: 10px;
 		grid-template: auto / repeat(auto-fit, minmax(110px, 1fr));
-		.dark-mode {
-			color: white;
-		}
-		.light-mode {
-			color: black;
-		}
+		transition: opacity 0.4s ease-out;
+	}
+	&__category {
+		color: $lightMode-text;
+	}
+	&__category.dark-mode {
+		color: white;
 	}
 
 	&__search {
@@ -119,8 +125,11 @@
 		font-size: 1.1rem;
 		color: white;
 		&::placeholder {
-			color: rgba(255, 255, 255, 0.9);
+			color: $lightMode-text;
 		}
+	}
+	&__input.dark-mode::placeholder {
+		color: $darkMode-text;
 	}
 
 	&__button {

@@ -3,12 +3,13 @@
 }
 .visually-hidden {
 	position: absolute;
-	clip: rect(0 0 0 0);
-	width: 1px;
-	height: 1px;
-	visibility: hidden;
 	pointer-events: none;
 	opacity: 0;
+}
+.container {
+	max-width: 1050px;
+	padding: 0px 15px;
+	margin: 0 auto;
 }
 .svg-16px {
 	width: 16px;

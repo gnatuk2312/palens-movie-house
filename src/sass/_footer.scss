@@ -1,12 +1,10 @@
 .footer {
-	background-color: $lightBlue;
+	background-color: $bg2-light;
 	padding: 40px 0px 50px 0px;
-	&__container {
-		max-width: 1050px;
-		padding: 0px 15px;
-		margin: 0 auto;
+	transition: background-color 0.3s ease;
+	&.dark-mode {
+		background-color: $bg2-dark;
 	}
-
 	&__contacts {
 		display: flex;
 		flex-direction: column;
@@ -17,18 +15,26 @@
 	&__rights {
 		margin-bottom: 10px;
 		letter-spacing: 1px;
+		color: $lightMode-text;
 		@media (max-width: 480px) {
 			font-size: 0.9rem;
 		}
+	}
+	&__rights.dark-mode {
+		color: $darkMode-text;
 	}
 
 	&__mail {
 		font-size: 1.3rem;
 		color: white;
 		text-decoration: underline;
+		color: $lightMode-text;
 		@media (max-width: 480px) {
 			font-size: 1.1rem;
 		}
+	}
+	&__mail.dark-mode {
+		color: $darkMode-text;
 	}
 	.dark-mode {
 		color: white;

@@ -1,12 +1,12 @@
 .movies {
-	background-color: $darkBlue;
+	background-color: $bg1-light;
+	color: $lightMode-text;
 	padding: 60px 0px 40px 0px;
-	&__container {
-		max-width: 1050px;
-		padding: 0px 15px;
-		margin: 0 auto;
+	transition: background-color 0.3s ease;
+	&.dark-mode {
+		color: $darkMode-text;
+		background-color: $bg1-dark;
 	}
-
 	&__items {
 		row-gap: 30px;
 		column-gap: 20px;
@@ -38,6 +38,7 @@
 
 	&__title {
 		padding: 6px 2px;
+		word-wrap: normal;
 	}
 
 	&__genres {
