@@ -9,4 +9,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=a(require("./modules/console")),r=a(require("./modules/showGenres")),d=a(require("./modules/darkMode"));function a(e){return e&&e.__esModule?e:{default:e}}window.addEventListener("DOMContentLoaded",()=>{(0,e.default)(),new r.default(".header__categories-menu",".header__categories-wrapper",".header__category").init(),new d.default(".header__color-theme").init()});
 },{"./sass/main.scss":"clu1","./modules/console":"jVF8","./modules/showGenres":"cE2f","./modules/darkMode":"ppYG"}]},{},["Focm"], null)
-//# sourceMappingURL=/Palens-MovieHouse/src.4bd61c5c.js.map
+//# sourceMappingURL=/Palens-MovieHouse/src.866a6900.js.map
