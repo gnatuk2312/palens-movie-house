@@ -1,0 +1,39 @@
+.footer {
+	background-color: $lightBlue;
+	padding: 40px 0px 50px 0px;
+	&__container {
+		max-width: 1050px;
+		padding: 0px 15px;
+		margin: 0 auto;
+	}
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__rights {
+		margin-bottom: 10px;
+		letter-spacing: 1px;
+		@media (max-width: 480px) {
+			font-size: 0.9rem;
+		}
+	}
+
+	&__mail {
+		font-size: 1.3rem;
+		color: white;
+		text-decoration: underline;
+		@media (max-width: 480px) {
+			font-size: 1.1rem;
+		}
+	}
+	.dark-mode {
+		color: white;
+	}
+	.light-mode {
+		color: black;
+	}
+}
