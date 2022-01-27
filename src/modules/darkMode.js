@@ -29,6 +29,7 @@ export default class darkMode {
 		this.toggleElement(this.headerInput, '.header__input');
 		this.toggleElement(this.genre, '.header__genre');
 		this.toggleElement(this.arrow, '.header__categories-menu .arrow');
+		this.toggleElement(this.genresList, '.header__categories-wrapper');
 		this.toggleElement(this.movies, '.movies');
 		this.toggleElement(this.footer, '.footer');
 		this.toggleElement(this.footerRights, '.footer__rights');
@@ -41,6 +42,11 @@ export default class darkMode {
 			this.searchBtn.children[0].classList.remove('visually-hidden');
 			this.searchBtn.children[1].classList.add('visually-hidden');
 		}
+
+		this.categories = document.querySelectorAll('.header__category');
+		this.categories.forEach(item => {
+			item.classList.toggle('dark-mode');
+		})
 	}
 
 	init() {

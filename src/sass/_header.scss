@@ -82,14 +82,17 @@
 	}
 	&__categories-wrapper {
 		position: absolute;
-		background-color: $bg2-dark;
+		background-color: $bg2-light;
 		width: 100%;
 		z-index: 3;
 		border-radius: 2px;
 		padding: 20px 20px;
 		top: 66px;
 		left: 0;
-		transition: opacity 0.4s ease-out;
+		transition: background-color 0.3s ease;
+		&.dark-mode {
+			background-color: $bg2-dark;
+		}
 	}
 	&__categories {
 		max-width: 1050px;
@@ -101,10 +104,10 @@
 		transition: opacity 0.4s ease-out;
 	}
 	&__category {
-		color: $lightMode-text;
+		color: black;
 	}
 	&__category.dark-mode {
-		color: white;
+		color: $darkMode-text;
 	}
 
 	&__search {
