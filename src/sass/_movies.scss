@@ -38,18 +38,20 @@
 
 	&__title {
 		padding: 6px 2px;
-		word-wrap: normal;
+		width: 240px;
 	}
 
 	&__genres {
 		display: flex;
 		flex-wrap: wrap;
 		padding: 0px 2px;
+		max-width: 240px;
 	}
 
 	&__genre {
+		line-height: 18px;
 		&:not(:last-child) {
-			margin-right: 6px;
+			margin-right: 10px;
 		}
 	}
 
