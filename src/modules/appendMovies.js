@@ -35,11 +35,6 @@ const appendMovies = (response) => {
 						<img src="${appendPoster(movie.poster_path)}" alt="Картинка" class="movies__image">
 					</div>
 					<h3 class="movies__title">${movie.title}</h3>
-					<ul class="movies__genres">
-						<li class="movies__genre">Мультфільм</li>
-						<li class="movies__genre">Комедія</li>
-						<li class="movies__genre">Пригоди</li>
-					</ul>
 					<div class="movies__rating ${getRatingColor(movie.vote_average)}"><span>${movie.vote_average}</span></div>
 				`
 
