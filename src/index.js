@@ -4,6 +4,7 @@ import showGenres from './modules/showGenres';
 import darkMode from './modules/darkMode';
 import scrollToTop from './modules/scrollToTop';
 import loadMovies from './modules/loadMovies';
+import searchMovies from './modules/searchMovies';
 
 window.addEventListener('DOMContentLoaded', () => {
 	consoles();
@@ -11,4 +12,5 @@ window.addEventListener('DOMContentLoaded', () => {
 	new darkMode(".header__color-theme").init();
 	scrollToTop();
 	loadMovies();
+	searchMovies();
 });

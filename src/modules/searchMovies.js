@@ -3,10 +3,13 @@ import fetchRequest from "./fetchRequest";
 const api_key = "api_key=37ddb2fc7c56da1b6488f77b0c18f898";
 const url = "https://api.themoviedb.org/3";
 const image_url = "https://image.tmdb.org/t/p/w500";
-const popular_url = url + "/discover/movie?sort_by=popularity.desc&" + api_key;
-const moviesWrapper = document.querySelector('.movies__items');
+const search_url = url + '/search/movie?' + api_key;
+const searchMovies = () => {
 
-const loadMovies = () => {
+	const searchForm = document.querySelector('.header__search');
+	const searchInput = document.querySelector('.header__input');
+
+	const moviesWrapper = document.querySelector('.movies__items');
 
 	const getRatingColor = (vote) => {
 		if (vote >= 7) {
@@ -42,13 +45,27 @@ const loadMovies = () => {
 		})
 	};
 
-	fetchRequest(popular_url)
-		.then(response => {
-			showMovies(response)
-		})
-		.catch(e => {
-			throw (e);
-		})
+	searchForm.addEventListener('click', (e) => {
+		e.preventDefault();
+		searchRequest();
+	})
+
+	const searchRequest = () => {
+		const searchValue = searchInput.value;
+		if (searchValue) {
+			fetchRequest(search_url + '&query=' + searchValue)
+				.then(response => {
+					console.log(response);
+
+					showMovies(response)
+				})
+				.catch(e => {
+					throw (e)
+				})
+		}
+
+	}
+
 }
 
-export default loadMovies;
+export default searchMovies;
