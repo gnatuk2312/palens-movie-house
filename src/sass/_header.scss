@@ -126,7 +126,10 @@
 		padding: 4px 36px 4px 10px;
 		letter-spacing: 1px;
 		font-size: 1.1rem;
-		color: white;
+		color: $lightMode-text;
+		&.dark-mode {
+			color: $darkMode-text;
+		}
 		&::placeholder {
 			color: $lightMode-text;
 		}
