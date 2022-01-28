@@ -5,6 +5,7 @@ import darkMode from './modules/darkMode';
 import scrollToTop from './modules/scrollToTop';
 import loadMovies from './modules/loadMovies';
 import searchMovies from './modules/searchMovies';
+import appendGenres from './modules/appendGenres';
 
 window.addEventListener('DOMContentLoaded', () => {
 	consoles();
@@ -13,4 +14,5 @@ window.addEventListener('DOMContentLoaded', () => {
 	scrollToTop();
 	loadMovies();
 	searchMovies();
+	appendGenres();
 });

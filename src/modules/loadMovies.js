@@ -6,10 +6,9 @@ const url = "https://api.themoviedb.org/3";
 const popular_url = url + "/discover/movie?sort_by=popularity.desc&" + api_key;
 
 const loadMovies = () => {
-
 	fetchRequest(popular_url)
 		.then(response => {
-			appendMovies(response)
+			appendMovies(response.results)
 		})
 		.catch(e => {
 			throw (e);

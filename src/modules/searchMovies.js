@@ -4,6 +4,7 @@ import appendMovies from "./appendMovies";
 const api_key = "api_key=37ddb2fc7c56da1b6488f77b0c18f898";
 const url = "https://api.themoviedb.org/3";
 const search_url = url + '/search/movie?' + api_key;
+const popular_url = url + "/discover/movie?sort_by=popularity.desc&" + api_key;
 
 const searchMovies = () => {
 
@@ -20,15 +21,21 @@ const searchMovies = () => {
 		if (searchValue) {
 			fetchRequest(search_url + '&query=' + searchValue)
 				.then(response => {
-					appendMovies(response)
+					appendMovies(response.results)
+				})
+				.catch(e => {
+					throw (e)
+				})
+		} else {
+			fetchRequest(popular_url)
+				.then(response => {
+					appendMovies(response.results)
 				})
 				.catch(e => {
 					throw (e)
 				})
 		}
-
 	}
-
 }
 
 export default searchMovies;

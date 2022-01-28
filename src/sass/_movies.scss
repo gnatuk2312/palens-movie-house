@@ -3,6 +3,7 @@
 	color: $lightMode-text;
 	padding: 60px 0px 40px 0px;
 	transition: background-color 0.3s ease;
+	min-height: 100vh;
 	&.dark-mode {
 		color: $darkMode-text;
 		background-color: $bg1-dark;
@@ -27,6 +28,7 @@
 
 	&__image {
 		position: absolute;
+		z-index: 3;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -77,6 +79,9 @@
 	.green {
 		background-color: #339900;
 	}
+	.null {
+		display: none;
+	}
 	.scroll-arrow {
 		position: fixed;
 		right: 56px;
@@ -92,5 +97,8 @@
 			transform: rotate(-90deg);
 			transition: opacity 0.4s ease;
 		}
+	}
+	.spinner {
+		width: 100px;
 	}
 }

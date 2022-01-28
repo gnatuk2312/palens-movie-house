@@ -8,10 +8,20 @@ const appendMovies = (response) => {
 			return "green"
 		} else if (vote >= 4) {
 			return "yellow"
-		} else if (vote < 4) {
+		} else if (vote > 0) {
 			return 'red'
+		} else {
+			return 'null'
 		}
 	};
+
+	const appendPoster = (posterPath) => {
+		if (posterPath == null) {
+			return "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/256px-No-Image-Placeholder.svg.png";
+		} else {
+			return image_url + posterPath;
+		}
+	}
 
 	const showMovies = (data) => {
 
@@ -22,7 +32,7 @@ const appendMovies = (response) => {
 			movieCard.innerHTML = `
 				
 					<div class="movies__poster">
-						<img src="${image_url + movie.poster_path}" alt="Картинка" class="movies__image">
+						<img src="${appendPoster(movie.poster_path)}" alt="Картинка" class="movies__image">
 					</div>
 					<h3 class="movies__title">${movie.title}</h3>
 					<ul class="movies__genres">
