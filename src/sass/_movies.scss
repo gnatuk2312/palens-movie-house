@@ -77,4 +77,20 @@
 	.green {
 		background-color: #339900;
 	}
+	.scroll-arrow {
+		position: fixed;
+		right: 56px;
+		bottom: 60px;
+		transition: opacity 0.4s ease;
+		transform: scale(1);
+		@media (max-width: 480px) {
+			right: 46px;
+			bottom: 50px;
+		}
+		img {
+			position: absolute;
+			transform: rotate(-90deg);
+			transition: opacity 0.4s ease;
+		}
+	}
 }

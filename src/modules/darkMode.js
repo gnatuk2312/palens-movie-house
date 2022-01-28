@@ -4,10 +4,8 @@ export default class darkMode {
 		this.arrow = document.querySelector('.header__categories-menu .arrow');
 		//-------------
 		this.searchBtn = document.querySelector('.header__button');
+		this.scrollBtn = document.querySelector('.scroll-arrow');
 	}
-
-
-
 	toggleTrigger() {
 		this.trigger.classList.toggle('is-dark')
 		if (this.trigger.classList.contains('is-dark')) {
@@ -19,9 +17,17 @@ export default class darkMode {
 		}
 	}
 
+	//------------------------
 	toggleElement(element, selector) {
 		element = document.querySelector(selector).classList.toggle('dark-mode');
 	}
+	toggleChildrenRemove(element, index) {
+		element.children[index].classList.remove('visually-hidden');
+	}
+	toggleChildrenAdd(element, index) {
+		element.children[index].classList.add('visually-hidden');
+	}
+	//------------------------
 
 	changeColors() {
 		this.toggleElement(this.header, '.header');
@@ -36,17 +42,23 @@ export default class darkMode {
 		this.toggleElement(this.footerMail, '.footer__mail');
 
 		if (!this.trigger.classList.contains('is-dark')) {
-			this.searchBtn.children[1].classList.remove('visually-hidden');
-			this.searchBtn.children[0].classList.add('visually-hidden');
+			this.toggleChildrenRemove(this.searchBtn, 1);
+			this.toggleChildrenAdd(this.searchBtn, 0);
+			this.toggleChildrenRemove(this.scrollBtn, 1);
+			this.toggleChildrenAdd(this.scrollBtn, 0);
 		} else {
-			this.searchBtn.children[0].classList.remove('visually-hidden');
-			this.searchBtn.children[1].classList.add('visually-hidden');
+			this.toggleChildrenRemove(this.searchBtn, 0);
+			this.toggleChildrenAdd(this.searchBtn, 1);
+			this.toggleChildrenRemove(this.scrollBtn, 0);
+			this.toggleChildrenAdd(this.scrollBtn, 1);
 		}
 
 		this.categories = document.querySelectorAll('.header__category');
 		this.categories.forEach(item => {
 			item.classList.toggle('dark-mode');
 		})
+
+
 	}
 
 	init() {

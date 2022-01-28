@@ -104,7 +104,7 @@
 		transition: opacity 0.4s ease-out;
 	}
 	&__category {
-		color: black;
+		color: $lightMode-text;
 	}
 	&__category.dark-mode {
 		color: $darkMode-text;
