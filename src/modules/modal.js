@@ -15,9 +15,9 @@ const showModal = () => {
 
 
 	const openModal = () => {
-		moviesInfo.innerHTML = ``;
+		//moviesInfo.innerHTML = ``;
 		modal.classList.remove('visually-hidden');
-		modal.classList.add('scroll-hidden');
+		//modal.classList.add('scroll-hidden');
 	}
 	const closeModal = () => {
 		modal.classList.add('visually-hidden');
@@ -40,8 +40,7 @@ const showModal = () => {
 		moviesInfo.innerHTML = `
 		<h2 class="modal__name">${response.title}</h2>
 			<div class="modal__poster">
-				<img src="${appendModalPoster(response)}" alt="картинка"
-					class="modal__poster-image">
+				<img src="${appendModalPoster(response)}" alt="картинка" class="modal__poster-image">
 			</div>
 			<div class="modal__description">
 				<div class="modal__original-title">
@@ -67,9 +66,9 @@ const showModal = () => {
 
 	const makingRequest = (e) => {
 		const movieId = e.path[2].dataset.id;
-		console.log(movieId);
 
 		const movie_url = url + '/movie/' + movieId + '?' + api_key + '&language=uk&external_source=imdb_id';
+		document.querySelector('.movies').textContent = movieId + movie_url;
 		openModal();
 		fetchRequest(movie_url)
 			.then(response => {
