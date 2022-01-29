@@ -65,7 +65,7 @@ const showModal = () => {
 	};
 
 	const makingRequest = (e) => {
-		const movieId = e.path[2].dataset.id;
+		const movieId = e.path[2].getAttribute('data-id');
 
 		const movie_url = url + '/movie/' + movieId + '?' + api_key + '&language=uk&external_source=imdb_id';
 		document.querySelector('.movies').textContent = movieId + movie_url;
