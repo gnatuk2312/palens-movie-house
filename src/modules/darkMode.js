@@ -5,6 +5,7 @@ export default class darkMode {
 		//-------------
 		this.searchBtn = document.querySelector('.header__button');
 		this.scrollBtn = document.querySelector('.scroll-arrow');
+		this.closeBtn = document.querySelector('.modal__close');
 	}
 	toggleTrigger() {
 		this.trigger.classList.toggle('is-dark')
@@ -40,17 +41,27 @@ export default class darkMode {
 		this.toggleElement(this.footer, '.footer');
 		this.toggleElement(this.footerRights, '.footer__rights');
 		this.toggleElement(this.footerMail, '.footer__mail');
+		this.toggleElement(this.modal, '.modal');
+		this.toggleElement(this.modalBody, '.modal__body');
 
 		if (!this.trigger.classList.contains('is-dark')) {
 			this.toggleChildrenRemove(this.searchBtn, 1);
 			this.toggleChildrenAdd(this.searchBtn, 0);
+			//-------------
 			this.toggleChildrenRemove(this.scrollBtn, 1);
 			this.toggleChildrenAdd(this.scrollBtn, 0);
+			//-------------
+			this.toggleChildrenRemove(this.closeBtn, 1);
+			this.toggleChildrenAdd(this.closeBtn, 0);
 		} else {
 			this.toggleChildrenRemove(this.searchBtn, 0);
 			this.toggleChildrenAdd(this.searchBtn, 1);
+			//-------------
 			this.toggleChildrenRemove(this.scrollBtn, 0);
 			this.toggleChildrenAdd(this.scrollBtn, 1);
+			//-------------
+			this.toggleChildrenRemove(this.closeBtn, 0);
+			this.toggleChildrenAdd(this.closeBtn, 1);
 		}
 
 		this.categories = document.querySelectorAll('.header__category');

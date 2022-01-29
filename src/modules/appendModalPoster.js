@@ -8,8 +8,5 @@ const appendModalPoster = (posterPath) => {
 	} else {
 		return "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/256px-No-Image-Placeholder.svg.png";
 	}
-
-
-
 }
 export default appendModalPoster;
