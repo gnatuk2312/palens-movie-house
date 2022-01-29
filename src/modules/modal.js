@@ -79,9 +79,6 @@ const showModal = () => {
 	//---------------------------
 
 
-	movieItem.addEventListener('touchstart', (e) => {
-		makingRequest(e);
-	})
 	movieItem.addEventListener('click', (e) => {
 		makingRequest(e);
 	})
