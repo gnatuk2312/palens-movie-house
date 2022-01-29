@@ -82,7 +82,9 @@ const showModal = () => {
 	movieItem.addEventListener('click', (e) => {
 		makingRequest(e);
 	})
-
+	movieItem.addEventListener('touchmove', (e) => {
+		makingRequest(e);
+	})
 
 	//---------------------------
 	modalClose.addEventListener('click', closeModal);
