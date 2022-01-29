@@ -11,9 +11,6 @@ const showModal = () => {
 	const moviesInfo = document.querySelector('.modal__info');
 	const modalClose = document.querySelector('.modal__close');
 
-	console.log(movieItem.children);
-
-
 	const openModal = () => {
 		//moviesInfo.innerHTML = ``;
 		modal.classList.remove('visually-hidden');
@@ -65,10 +62,10 @@ const showModal = () => {
 	};
 
 	const makingRequest = (e) => {
-		const movieId = e.path[2].getAttribute('data-id');
-
+		const targetParent = e.target.parentNode;
+		const movieId = targetParent.parentNode.getAttribute('data-id');
 		const movie_url = url + '/movie/' + movieId + '?' + api_key + '&language=uk&external_source=imdb_id';
-		document.querySelector('.movies').textContent = movieId + movie_url;
+		document.querySelector('.header').textContent = movieId;
 		openModal();
 		fetchRequest(movie_url)
 			.then(response => {
