@@ -80,9 +80,7 @@ const showModal = () => {
 
 
 	movieItem.addEventListener('click', (e) => {
-		makingRequest(e);
-	})
-	movieItem.addEventListener('touchmove', (e) => {
+		document.querySelector('.header').style.display = 'none'
 		makingRequest(e);
 	})
 
