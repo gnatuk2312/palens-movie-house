@@ -69,18 +69,17 @@ const showModal = () => {
 		const movieId = e.path[2].dataset.id;
 		console.log(movieId);
 
-		const movie_url = url + '/movie/' + movieId + '?' + api_key + '&language=uk&external_source=imdb_id'
+		const movie_url = url + '/movie/' + movieId + '?' + api_key + '&language=uk&external_source=imdb_id';
+		openModal();
 		fetchRequest(movie_url)
 			.then(response => {
 				appendInfoInModal(response);
 			})
-		openModal();
 	}
 	//---------------------------
 
 
 	movieItem.addEventListener('click', (e) => {
-		document.querySelector('.header').style.display = 'none'
 		makingRequest(e);
 	})
 
