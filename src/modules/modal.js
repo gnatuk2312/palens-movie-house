@@ -7,16 +7,21 @@ const showModal = () => {
 	const url = "https://api.themoviedb.org/3";
 
 	const modal = document.querySelector('.modal');
-	const movieItems = document.querySelector('.movies__items');
+	const movieItem = document.querySelector('.movies__items');
 	const moviesInfo = document.querySelector('.modal__info');
 	const modalClose = document.querySelector('.modal__close');
+
+	console.log(movieItem.children);
+
 
 	const openModal = () => {
 		moviesInfo.innerHTML = ``;
 		modal.classList.remove('visually-hidden');
+		modal.classList.add('scroll-hidden');
 	}
 	const closeModal = () => {
 		modal.classList.add('visually-hidden');
+		modal.classList.remove('scroll-hidden');
 	}
 	const closeBackdropModal = (e) => {
 		if (e.target === e.currentTarget) {
@@ -60,19 +65,24 @@ const showModal = () => {
 		`
 	};
 
-	//---------------------------
-	movieItems.addEventListener('click', (e) => {
+	const makingRequest = (e) => {
 		const movieId = e.path[2].dataset.id;
 		console.log(movieId);
 
 		const movie_url = url + '/movie/' + movieId + '?' + api_key + '&language=uk&external_source=imdb_id'
-
 		fetchRequest(movie_url)
 			.then(response => {
 				appendInfoInModal(response);
 			})
-			.then(openModal())
+		openModal();
+	}
+	//---------------------------
+
+
+	movieItem.addEventListener('touchend', (e) => {
+		makingRequest(e);
 	})
+
 
 	//---------------------------
 	modalClose.addEventListener('click', closeModal);
