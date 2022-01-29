@@ -21,4 +21,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./fetchRequest":"zh1L"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=t(require("./modules/console")),r=t(require("./modules/showGenres")),d=t(require("./modules/darkMode")),u=t(require("./modules/scrollToTop")),o=t(require("./modules/loadMovies")),s=t(require("./modules/searchMovies")),a=t(require("./modules/appendGenres"));function t(e){return e&&e.__esModule?e:{default:e}}window.addEventListener("DOMContentLoaded",()=>{(0,e.default)(),new r.default(".header__categories-menu",".header__categories-wrapper",".header__category").init(),new d.default(".header__color-theme").init(),(0,u.default)(),(0,o.default)(),(0,s.default)(),(0,a.default)()});
 },{"./sass/main.scss":"clu1","./modules/console":"jVF8","./modules/showGenres":"cE2f","./modules/darkMode":"ppYG","./modules/scrollToTop":"ksyp","./modules/loadMovies":"BauV","./modules/searchMovies":"bOgj","./modules/appendGenres":"ReSA"}]},{},["Focm"], null)
-//# sourceMappingURL=/Palens-MovieHouse/src.bf61060f.js.map
+//# sourceMappingURL=/Palens-MovieHouse/src.7815d6ff.js.map
