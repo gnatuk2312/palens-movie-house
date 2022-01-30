@@ -63,10 +63,6 @@
 	}
 }
 
-.tui-pagination .tui-page-btn:hover {
-	background-color: $bg2-light;
-}
-
 .tui-pagination .tui-is-selected,
 .tui-pagination strong {
 	color: $lightMode-text;
@@ -77,11 +73,6 @@
 		color: $lightMode-text;
 	}
 }
-
-.tui-pagination .tui-is-selected:hover {
-	background-color: $bg2-light;
-}
-
 .tui-pagination .tui-first-child.tui-is-selected,
 .tui-pagination strong.tui-first-child {
 	margin-left: 0;
@@ -205,11 +196,6 @@
 	margin-top: 0px;
 	vertical-align: top;
 	background-position: 0px -24px;
-}
-
-.tui-pagination .tui-is-disabled:hover {
-	background: #fff;
-	cursor: default;
 }
 
 .tui-pagination .tui-is-disabled .tui-ico-prev {

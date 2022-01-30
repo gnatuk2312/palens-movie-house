@@ -1,8 +1,11 @@
 import fetchRequest from "./fetchRequest";
 import appendMovies from "./appendMovies";
+import Pagination from 'tui-pagination';
+import paginationSettings from './paginationSettings';
 
 const api_key = "api_key=37ddb2fc7c56da1b6488f77b0c18f898";
 const url = "https://api.themoviedb.org/3";
+
 
 const searchByGenre = () => {
 
@@ -17,6 +20,20 @@ const searchByGenre = () => {
 				.then(response => {
 					appendMovies(response.results);
 				})
+			if (false) {
+				const paginationSearch = new Pagination('pagination1', paginationSettings());
+				paginationSearch.on('beforeMove', (e) => {
+					fetchRequest(genre_url + e.page)
+						.then(response => {
+							console.log(response);
+
+							appendMovies(response.results)
+						})
+						.catch(e => {
+							throw (e);
+						})
+				});
+			}
 		}
 	})
 

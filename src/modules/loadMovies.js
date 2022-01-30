@@ -14,23 +14,24 @@ const loadMovies = () => {
 		.then(response => {
 			console.log(response);
 			appendMovies(response.results)
-
 		})
 		.catch(e => {
 			throw (e);
 		})
 
-	paginationLoad.on('beforeMove', (e) => {
-		fetchRequest(popular_url + e.page)
-			.then(response => {
-				console.log(response);
+	if (true) {
+		paginationLoad.on('beforeMove', (e) => {
+			fetchRequest(popular_url + e.page)
+				.then(response => {
+					console.log(response);
 
-				appendMovies(response.results)
-			})
-			.catch(e => {
-				throw (e);
-			})
-	});
+					appendMovies(response.results)
+				})
+				.catch(e => {
+					throw (e);
+				})
+		});
+	}
 
 
 
