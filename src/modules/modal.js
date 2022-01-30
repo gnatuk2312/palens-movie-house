@@ -62,14 +62,16 @@ const showModal = () => {
 	};
 
 	const makingRequest = (e) => {
-		let targetParent = e.target.parentNode;
-		let movieId = targetParent.parentNode.getAttribute('data-id');
-		const movie_url = url + '/movie/' + movieId + '?' + api_key + '&language=uk&external_source=imdb_id';
-		openModal();
-		fetchRequest(movie_url)
-			.then(response => {
-				appendInfoInModal(response);
-			})
+		if (e.target.tagName == "IMG") {
+			let targetParent = e.target.parentNode;
+			let movieId = targetParent.parentNode.getAttribute('data-id');
+			const movie_url = url + '/movie/' + movieId + '?' + api_key + '&language=uk&external_source=imdb_id';
+			openModal();
+			fetchRequest(movie_url)
+				.then(response => {
+					appendInfoInModal(response);
+				})
+		}
 	}
 	//---------------------------
 
