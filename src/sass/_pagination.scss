@@ -11,10 +11,6 @@
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	background-color: white;
-	@media screen and (max-width: 767px) {
-		background: transparent;
-	}
 }
 
 .tui-ico-ellipsis,
@@ -43,7 +39,7 @@
 	height: 40px;
 	// padding: 13px 11px;
 	margin-left: 0;
-	color: $lightMode-text;
+	color: $darkMode-text;
 	font-size: 1.1rem;
 	font-weight: 500;
 	font-style: normal;
@@ -54,13 +50,10 @@
 	margin-right: 10px;
 	@media screen and (max-width: 767px) {
 		margin-right: 0px;
-		color: $darkMode-text;
 	}
 }
 .tui-pagination.dark-mode .tui-page-btn {
-	@media (max-width: 767px) {
-		color: $lightMode-text;
-	}
+	color: $lightMode-text;
 }
 
 .tui-pagination .tui-is-selected,
@@ -70,7 +63,6 @@
 	cursor: default;
 	@media screen and (max-width: 767px) {
 		background: $bg2-light;
-		color: $lightMode-text;
 	}
 }
 .tui-pagination .tui-first-child.tui-is-selected,
