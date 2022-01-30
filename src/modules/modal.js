@@ -64,8 +64,6 @@ const showModal = () => {
 	const makingRequest = (e) => {
 		let targetParent = e.target.parentNode;
 		let movieId = targetParent.parentNode.getAttribute('data-id');
-		document.querySelector('.movies').textContent = 'клік';
-		document.querySelector('.header').textContent = movieId;
 		const movie_url = url + '/movie/' + movieId + '?' + api_key + '&language=uk&external_source=imdb_id';
 		openModal();
 		fetchRequest(movie_url)
