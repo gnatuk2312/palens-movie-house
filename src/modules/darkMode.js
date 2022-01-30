@@ -43,6 +43,7 @@ export default class darkMode {
 		this.toggleElement(this.footerMail, '.footer__mail');
 		this.toggleElement(this.modal, '.modal');
 		this.toggleElement(this.modalBody, '.modal__body');
+		this.toggleElement(this.pagination, '.tui-pagination');
 
 		if (!this.trigger.classList.contains('is-dark')) {
 			this.toggleChildrenRemove(this.searchBtn, 1);

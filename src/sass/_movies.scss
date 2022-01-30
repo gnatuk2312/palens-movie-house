@@ -8,6 +8,9 @@
 		color: $darkMode-text;
 		background-color: $bg1-dark;
 	}
+	&__container {
+		min-height: 100vh;
+	}
 	&__items {
 		row-gap: 30px;
 		column-gap: 20px;
