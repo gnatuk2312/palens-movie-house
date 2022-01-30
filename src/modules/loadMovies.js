@@ -9,6 +9,13 @@ const popular_url = url + "/discover/movie?sort_by=popularity.desc&" + api_key +
 
 const paginationLoad = new Pagination('pagination1', paginationSettings());
 
+function backToTop() {
+	if (window.pageYOffset > 0) {
+		window.scrollBy(0, -110);
+		setTimeout(backToTop, 0);
+	};
+};
+
 const loadMovies = () => {
 	fetchRequest(popular_url + '1')
 		.then(response => {
@@ -21,10 +28,10 @@ const loadMovies = () => {
 
 	if (true) {
 		paginationLoad.on('beforeMove', (e) => {
+			backToTop();
 			fetchRequest(popular_url + e.page)
 				.then(response => {
 					console.log(response);
-
 					appendMovies(response.results)
 				})
 				.catch(e => {
