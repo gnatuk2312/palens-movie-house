@@ -12,12 +12,8 @@ const appendGenres = () => {
 	const loadGenres = (data) => {
 		data.forEach(genre => {
 			const genresLi = document.createElement('LI');
-			const genresButton = document.createElement('BUTTON');
-			genresButton.classList.add('header__category');
-			genresButton.classList.add('dark-mode');
-			genresLi.appendChild(genresButton);
-			genresButton.innerHTML = `
-			<li><button class="header__category dark-mode">${genre.name}</button></li>
+			genresLi.innerHTML = `
+			<button class="header__category dark-mode" data-genre="${genre.id}">${genre.name}</button>
 			`
 			genresList.appendChild(genresLi);
 		})

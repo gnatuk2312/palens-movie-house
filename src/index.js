@@ -7,6 +7,7 @@ import loadMovies from './modules/loadMovies';
 import searchMovies from './modules/searchMovies';
 import appendGenres from './modules/appendGenres';
 import showModal from './modules/modal';
+import searchByGenre from './modules/searchByGenre';
 
 window.addEventListener('DOMContentLoaded', () => {
 	consoles();
@@ -15,6 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	scrollToTop();
 	loadMovies();
 	searchMovies();
+	searchByGenre();
 	appendGenres();
 	showModal();
 });
