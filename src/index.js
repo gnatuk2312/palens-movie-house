@@ -11,7 +11,7 @@ import searchByGenre from './modules/searchByGenre';
 
 window.addEventListener('DOMContentLoaded', () => {
 	consoles();
-	new showGenres(".header__categories-menu", ".header__categories-wrapper", '.header__category').init();
+	new showGenres(".header__categories-menu", ".header__categories-wrapper", '.header__categories').init();
 	new darkMode(".header__color-theme").init();
 	scrollToTop();
 	loadMovies();

@@ -2,7 +2,7 @@ export default class showGenres {
 	constructor(triggerSelector, listSelector, itemSelector) {
 		this.trigger = document.querySelector(triggerSelector);
 		this.list = document.querySelector(listSelector);
-		this.items = document.querySelectorAll(itemSelector);
+		this.items = document.querySelector(itemSelector);
 	}
 
 	toggleList() {
@@ -15,19 +15,19 @@ export default class showGenres {
 	}
 
 	itemClicked() {
-		this.items.forEach(item => {
-			item.addEventListener('click', () => {
-				this.trigger.children[1].classList.remove('active');
+		this.items.addEventListener('click', (e) => {
+			if (e.target.tagName == "BUTTON") {
 				this.list.classList.add('visually-hidden');
-			})
+				this.trigger.children[1].classList.remove('active');
+			}
 		})
 	}
 
 	init() {
 		this.trigger.addEventListener('click', () => {
 			this.toggleList();
-			this.itemClicked();
 		});
+		this.itemClicked();
 	}
 }
 
