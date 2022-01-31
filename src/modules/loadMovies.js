@@ -17,26 +17,34 @@ function backToTop() {
 };
 
 const loadMovies = () => {
-	fetchRequest(popular_url + '1')
-		.then(response => {
-			console.log(response);
-			appendMovies(response.results)
-		})
-		.catch(e => {
-			throw (e);
-		})
+	try {
+		fetchRequest(popular_url + '1')
+			.then(response => {
+				console.log(response);
+				appendMovies(response.results)
+			})
+			.catch(e => {
+				throw (e);
+			})
+	} catch (error) {
+		alert(error);
+	}
 
 	if (true) {
 		paginationLoad.on('beforeMove', (e) => {
 			backToTop();
-			fetchRequest(popular_url + e.page)
-				.then(response => {
-					console.log(response);
-					appendMovies(response.results)
-				})
-				.catch(e => {
-					throw (e);
-				})
+			try {
+				fetchRequest(popular_url + e.page)
+					.then(response => {
+						console.log(response);
+						appendMovies(response.results)
+					})
+					.catch(e => {
+						throw (e);
+					})
+			} catch (error) {
+				alert(error);
+			}
 		});
 	}
 

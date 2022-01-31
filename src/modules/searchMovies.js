@@ -19,21 +19,30 @@ const searchMovies = () => {
 	const searchRequest = () => {
 		const searchValue = searchInput.value;
 		if (searchValue) {
-			fetchRequest(search_url + '&query=' + searchValue)
-				.then(response => {
-					appendMovies(response.results)
-				})
-				.catch(e => {
-					throw (e)
-				})
+			try {
+				fetchRequest(search_url + '&query=' + searchValue)
+					.then(response => {
+						appendMovies(response.results)
+					})
+					.catch(e => {
+						throw (e)
+					})
+			} catch (error) {
+				alert(error)
+			}
 		} else {
-			fetchRequest(popular_url)
-				.then(response => {
-					appendMovies(response.results)
-				})
-				.catch(e => {
-					throw (e)
-				})
+			try {
+				fetchRequest(popular_url)
+					.then(response => {
+						appendMovies(response.results)
+					})
+					.catch(e => {
+						throw (e)
+					})
+			} catch (error) {
+				alert(error);
+			}
+
 		}
 	}
 }

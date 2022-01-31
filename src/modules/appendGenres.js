@@ -18,11 +18,18 @@ const appendGenres = () => {
 			genresList.appendChild(genresLi);
 		})
 	}
+	try {
+		fetchRequest(allGenres_url)
+			.then(data => {
+				loadGenres(data.genres)
+			})
+			.catch(e => {
+				throw (e);
+			})
+	} catch (error) {
+		alert(error)
+	}
 
-	fetchRequest(allGenres_url)
-		.then(data => {
-			loadGenres(data.genres)
-		})
 
 }
 

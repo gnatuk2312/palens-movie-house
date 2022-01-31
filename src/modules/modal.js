@@ -67,10 +67,17 @@ const showModal = () => {
 			let movieId = targetParent.parentNode.getAttribute('data-id');
 			const movie_url = url + '/movie/' + movieId + '?' + api_key + '&language=uk&external_source=imdb_id';
 			openModal();
-			fetchRequest(movie_url)
-				.then(response => {
-					appendInfoInModal(response);
-				})
+			try {
+				fetchRequest(movie_url)
+					.then(response => {
+						appendInfoInModal(response);
+					})
+					.catch(e => {
+						throw (e)
+					})
+			} catch (error) {
+				alert(error)
+			}
 		}
 	}
 	//---------------------------

@@ -16,10 +16,17 @@ const searchByGenre = () => {
 		if (e.target.tagName == "BUTTON") {
 			const genreId = e.target.getAttribute('data-genre')
 			const genre_url = url + '/discover/movie?' + api_key + '&language=en-US&sort_by=popularity.desc&page=1&with_genres=' + genreId + '&page=';
-			fetchRequest(genre_url + '1')
-				.then(response => {
-					appendMovies(response.results);
-				})
+			try {
+				fetchRequest(genre_url + '1')
+					.then(response => {
+						appendMovies(response.results);
+					})
+					.catch(e => {
+						throw (e);
+					})
+			} catch (error) {
+				alert(error);
+			}
 			if (false) {
 				const paginationSearch = new Pagination('pagination1', paginationSettings());
 				paginationSearch.on('beforeMove', (e) => {
