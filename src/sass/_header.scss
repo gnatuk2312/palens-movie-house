@@ -100,11 +100,16 @@
 		display: grid;
 		justify-items: center;
 		row-gap: 10px;
-		grid-template: auto / repeat(auto-fit, minmax(110px, 1fr));
+		grid-template: auto / repeat(auto-fit, minmax(120px, 1fr));
 		transition: opacity 0.4s ease-out;
 	}
 	&__category {
+		font-size: 1.2rem;
 		color: $lightMode-text;
+		padding: 4px 0px;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 	&__category.dark-mode {
 		color: $darkMode-text;
