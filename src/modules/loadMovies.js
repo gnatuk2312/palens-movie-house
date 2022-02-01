@@ -1,11 +1,7 @@
-import fetchRequest from "./fetchRequest";
 import appendMovies from "./appendMovies";
 import Pagination from 'tui-pagination';
 import paginationSettings from './paginationSettings';
-
-const api_key = "api_key=37ddb2fc7c56da1b6488f77b0c18f898";
-const url = "https://api.themoviedb.org/3";
-const popular_url = url + "/discover/movie?sort_by=popularity.desc&" + api_key + '&language=uk&query=get&page=';
+import { fetchPopular } from "./service/moviesAPI";
 
 const paginationLoad = new Pagination('pagination1', paginationSettings());
 
@@ -18,38 +14,32 @@ function backToTop() {
 
 const loadMovies = () => {
 	try {
-		fetchRequest(popular_url + '1')
+		fetchPopular()
 			.then(response => {
-				console.log(response);
+				//console.log(response);
 				appendMovies(response.results)
 			})
 			.catch(e => {
 				throw (e);
 			})
 	} catch (error) {
-		alert(error);
+		alert(error.message);
 	}
 
-	if (true) {
-		paginationLoad.on('beforeMove', (e) => {
-			backToTop();
-			try {
-				fetchRequest(popular_url + e.page)
-					.then(response => {
-						console.log(response);
-						appendMovies(response.results)
-					})
-					.catch(e => {
-						throw (e);
-					})
-			} catch (error) {
-				alert(error);
-			}
-		});
-	}
-
-
-
+	paginationLoad.on('beforeMove', (e) => {
+		backToTop();
+		try {
+			fetchPopular(e.page)
+				.then(response => {
+					//console.log(response);
+					appendMovies(response.results)
+				})
+				.catch(e => {
+					throw (e);
+				})
+		} catch (error) {
+			alert(error.message);
+		}
+	});
 }
-
 export default loadMovies;

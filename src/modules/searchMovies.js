@@ -1,10 +1,6 @@
-import fetchRequest from "./fetchRequest";
 import appendMovies from "./appendMovies";
-
-const api_key = "api_key=37ddb2fc7c56da1b6488f77b0c18f898";
-const url = "https://api.themoviedb.org/3";
-const search_url = url + '/search/movie?' + api_key;
-const popular_url = url + "/discover/movie?sort_by=popularity.desc&" + api_key;
+import { fetchPopular } from "./service/moviesAPI";
+import { fetchSearch } from "./service/moviesAPI";
 
 const searchMovies = () => {
 
@@ -20,27 +16,31 @@ const searchMovies = () => {
 		const searchValue = searchInput.value;
 		if (searchValue) {
 			try {
-				fetchRequest(search_url + '&query=' + searchValue)
+				fetchSearch(searchValue)
 					.then(response => {
+						if (response.results.length === 0) {
+							alert(Error("Даних фільмів немає в базі даних :("));
+						}
 						appendMovies(response.results)
 					})
 					.catch(e => {
-						throw (e)
+						throw (e);
 					})
 			} catch (error) {
-				alert(error)
+				alert(error.message);
 			}
+
 		} else {
 			try {
-				fetchRequest(popular_url)
+				fetchPopular()
 					.then(response => {
 						appendMovies(response.results)
 					})
 					.catch(e => {
-						throw (e)
+						throw (e);
 					})
 			} catch (error) {
-				alert(error);
+				alert(error.message);
 			}
 
 		}

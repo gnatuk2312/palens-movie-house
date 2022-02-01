@@ -1,10 +1,7 @@
-import fetchRequest from './fetchRequest';
 import getRatingColor from './getRatingColor';
 import appendModalPoster from './appendModalPoster';
+import { fetchModal } from './service/moviesAPI';
 const showModal = () => {
-
-	const api_key = "api_key=37ddb2fc7c56da1b6488f77b0c18f898";
-	const url = "https://api.themoviedb.org/3";
 
 	const modal = document.querySelector('.modal');
 	const movieItem = document.querySelector('.movies__items');
@@ -14,7 +11,7 @@ const showModal = () => {
 	const openModal = () => {
 		//moviesInfo.innerHTML = ``;
 		modal.classList.remove('visually-hidden');
-		//modal.classList.add('scroll-hidden');
+		modal.classList.add('scroll-hidden');
 	}
 	const closeModal = () => {
 		modal.classList.add('visually-hidden');
@@ -65,10 +62,9 @@ const showModal = () => {
 		if (e.target.tagName == "IMG") {
 			let targetParent = e.target.parentNode;
 			let movieId = targetParent.parentNode.getAttribute('data-id');
-			const movie_url = url + '/movie/' + movieId + '?' + api_key + '&language=uk&external_source=imdb_id';
 			openModal();
 			try {
-				fetchRequest(movie_url)
+				fetchModal(movieId)
 					.then(response => {
 						appendInfoInModal(response);
 					})
@@ -80,13 +76,11 @@ const showModal = () => {
 			}
 		}
 	}
+
 	//---------------------------
-
-
 	movieItem.addEventListener('click', (e) => {
 		makingRequest(e);
 	})
-
 	//---------------------------
 	modalClose.addEventListener('click', closeModal);
 	modal.addEventListener('click', (e) => {

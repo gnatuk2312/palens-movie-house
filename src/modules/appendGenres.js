@@ -1,8 +1,4 @@
-import fetchRequest from "./fetchRequest";
-
-const api_key = "api_key=37ddb2fc7c56da1b6488f77b0c18f898";
-const url = "https://api.themoviedb.org/3";
-const allGenres_url = url + '/genre/movie/list?' + api_key + '&language=uk';
+import { fetchGenresList } from "./service/moviesAPI";
 
 const genresList = document.querySelector('.header__categories');
 
@@ -19,7 +15,7 @@ const appendGenres = () => {
 		})
 	}
 	try {
-		fetchRequest(allGenres_url)
+		fetchGenresList()
 			.then(data => {
 				loadGenres(data.genres)
 			})
@@ -27,7 +23,7 @@ const appendGenres = () => {
 				throw (e);
 			})
 	} catch (error) {
-		alert(error)
+		alert(error.message);
 	}
 
 

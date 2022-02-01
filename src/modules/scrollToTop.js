@@ -2,7 +2,6 @@ const scrollToTop = () => {
 
 	const button = document.querySelector('.scroll-arrow');
 
-
 	window.addEventListener('scroll', () => {
 		let scrolled = window.pageYOffset;
 		let coords = document.documentElement.clientHeight;
@@ -23,7 +22,5 @@ const scrollToTop = () => {
 	};
 
 	button.addEventListener('click', backToTop);
-
-
 };
 export default scrollToTop;
