@@ -4,7 +4,7 @@
 * see most popular movies in cinemas
 * find any movie in search
 * filter smth by genres
-* read its description, rating, popularity 
+* read movie description, rating, popularity 
 
 ### Technologies | skills | feautures used here:
 * HTML5 & CSS3
