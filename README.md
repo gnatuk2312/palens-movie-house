@@ -21,5 +21,5 @@ Instagram: [gnat_liashenko](https://www.instagram.com/gnat_liashenko/)
 
 Email: hnat.liashenko@gmail.com
 
-### Duration of developing - 14 days
+### Duration of developing - 23 days
 ##### © Developed by Hnat Liashenko
